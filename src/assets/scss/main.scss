@@ -1,0 +1,86 @@
+@import 'variables';
+@import 'fonts';
+@import 'mixins';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: $bg-body;
+  color: $color-primary;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  background-color: $bg-element;
+  color: $color-primary;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  outline: none;
+  border-radius: $radius-default;
+  box-shadow: $shadow-input;
+  transition: all 0.2s;
+  resize: none;
+  &::placeholder {
+    color: $color-muted;
+  }
+  &:focus {
+    border: 1px solid $color-muted;
+  }
+
+  &.input-invalid {
+    border: 1px solid $color-danger;
+  }
+}
+
+select {
+  background-color: $bg-element;
+  color: $color-muted;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 10px 26px 10px 16px;
+  border: none;
+  outline: none;
+  border-radius: $radius-default;
+  box-shadow: $shadow-input;
+  transition: all 0.2s;
+  font-family: inherit;
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.invalid-feedback {
+  position: absolute;
+  bottom: -14px;
+  color: $color-danger;
+  font-size: 8px;
+  line-height: 10px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1376px;
+  padding: 32px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 16px;
+  }
+}
