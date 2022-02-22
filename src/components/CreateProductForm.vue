@@ -114,6 +114,7 @@ export default {
       this.newProduct.price.value = parseInt(newValue.replace(/\D/g, ''))
     },
     createProduct() {
+      console.log(1)
       const product = {
         id: Date.now().toString(),
         title: this.newProduct.title.value,
